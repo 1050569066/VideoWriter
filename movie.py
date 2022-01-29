@@ -1,4 +1,11 @@
-import cv2,time,os
+while True:
+    try:
+        import cv2,time,os
+        break
+    except:
+        import os
+        os.system("py -m pip install opencv-python")
+
 
 input("Press Enter to start...")
 rt = 5
