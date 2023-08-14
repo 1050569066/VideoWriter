@@ -1,11 +1,4 @@
-while True:
-    try:
-        import cv2,time,os
-        break
-    except:
-        import os
-        os.system("py -m pip install opencv-python")
-
+import cv2,time,os
 
 input("Press Enter to start...")
 rt = 5
@@ -16,9 +9,8 @@ while rt>0:
 
 cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 fc = cv2.VideoWriter_fourcc(*"mp4v")
-out = cv2.VideoWriter("movie.mp4",fc,16,(800,600))
-cap.set(3,800)
-cap.set(4,600)
+out = cv2.VideoWriter("movie.mp4",fc,16,(int(cap.get(3)),int(cap.get(4))))
+
 while True:
     try:
         ret,frame = cap.read()
